@@ -73,7 +73,9 @@ const Input = (props) => {
         onChangeText={textChangeHandler}
         onBlur={lostFocusHandler}
       />
-      {!inputState.isValid && <Text>{props.errorText}</Text>}
+      {!inputState.isValid && (
+        <Text style={styles.errorText}>{props.errorText}</Text>
+      )}
     </View>
   );
 };
@@ -91,6 +93,9 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     borderBottomColor: "#ccc",
     borderBottomWidth: 1,
+  },
+  errorText: {
+    color: "red",
   },
 });
 
